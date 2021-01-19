@@ -1,0 +1,294 @@
+{% extends 'portfolio1/main.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <style>        
+        /* CAROUSEL */
+        .carousel-item h3, .carousel-item h5{
+            position: absolute;
+            top: 40%;
+            left: 50px;
+            z-index: 1;
+            color: #fff;
+            text-align: center;
+            width: 85%;
+        }
+        .carousel-item h3{
+            font-size: 4vw;
+            font-weight: 800;
+        }
+        .carousel-item h5{
+            top: 50%;
+            font-size: 2vw;
+            font-family: "Open Sans";
+        }
+        .carousel-item{
+            max-height: 900px;
+        }
+        .learn-more{
+            left: 50%!important;
+            transform: translateX(-50%)
+
+        }
+
+        /* HOME */
+        .profile-pic{
+            max-width: 100%
+        }
+        .home{
+            display: flex;
+            background: url("{% static 'img/JR_header.jpg' %}") no-repeat center;
+            height: 100vh;
+            min-height: 500px;
+            background-size: cover;
+            /* background-attachment: fixed; */
+            box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+        }
+        .home .max-width{
+            margin: auto 0 auto 40px;
+        }
+        .home .home-content .text-1{
+            font-size: 27px;
+        }
+        .home .home-content .text-2{
+            font-size: 75px;
+            font-weight: 600;
+            margin-left: -3px;
+        }
+        .home .home-content .text-3{
+            font-size: 40px;
+            margin: 5px 0;
+        }
+        .home .home-content .text-3 span{
+            color: orangered;
+            font-weight: 500;
+        }
+
+        /* ABOUT ME CSS */
+        .title{
+            font-size: 50px;
+            font-weight: 800;
+            color: orangered;
+        }
+        .container-image{
+            width: 70%;
+            display: grid;
+            grid-template-areas: "overlap";
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .profile-image{
+            width: 95%;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+            right: -40px;
+            bottom: -40px;;
+            grid-area: overlap;
+        }
+        .profile-image img{
+            width: 100%;
+            padding: 0;
+            position: relative;
+            top: -20px;
+        }
+        .profile-image-background{
+            width: 95%;
+            /* background: orangered; */
+            background-image: linear-gradient(to bottom right, darkred, orangered);
+            grid-area: overlap;
+        }
+        .profile h1{
+            font-size: 40px;
+            font-weight: 600;
+        }
+        .profile h1 span{
+            color: orangered;
+        }
+        .profile p{
+            font-size: 20px;
+        }
+
+        /* SKILLS */
+        .title-1{
+            font-size: 50px;
+            font-weight: 800;
+            color: black;
+        }
+        .skills{
+            background: #fddfc7;
+        }
+        .skills h2{
+            color: darkred;
+            font-weight: 800;
+            font-size: 32px;
+        }
+        .skills i{
+            font-size: 120px;
+            padding-bottom: 10px;
+            background: -webkit-gradient(linear, left top, left bottom, from(orangered), to(darkred));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* background: ora */
+        }
+        /* MEDIA QUERIES */
+        @media (max-width: 768px){
+            .container-image{
+                width: 90%;
+                display: grid;
+                grid-template-areas: "overlap";
+                margin-top: 40px;
+                margin-bottom: 50px;
+            }
+            .profile h1{
+                font-size: 26px;
+                font-weight: 600;
+            }
+            .profile p{
+                font-size: 15px;
+            }
+        }
+        @media (max-width: 576px){
+            /* xs */
+            .container-image{
+                width: 70%;
+                display: grid;
+                grid-template-areas: "overlap";
+                margin-top: 50px;
+                margin-bottom: 50px;
+            }
+            .profile-image{
+                width: 98%;
+                padding: 0;
+                overflow: hidden;
+                position: relative;
+                right: -40px;
+                bottom: -40px;;
+                grid-area: overlap;
+            }
+            .profile h1{
+                font-size: 34px;
+                font-weight: 600;
+            }
+            .profile p{
+                font-size: 20px;
+            }
+        }        
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="home">
+        <div class="max-width">
+            <div class="home-content container-fluid ml-0 ml-lg-5">
+                <div class="text-1">Hello, my name is</div>
+                <div class="text-2">John Ray Ignacio</div>
+                <div class="text-3">And I'm studying <br> <span>BS Business Administration<br>& Accountancy</span></div>
+
+            </div>
+        </div>  
+    </header>
+
+    <!-- ABOUT ME -->
+    <div class="col-12 text-center mt-5">
+        <h1 class="pt-4 title">About Me</h1>
+        <div class="border-top border-dark w-25 mx-auto my-3"></div>
+        <h5 style="color: slategray">A quick introduction on who I am</h5>
+    </div>  
+    <div class="col-12 text-center profile">
+          <div class="row">
+              <div class="col-xs-12 col-sm-6">
+                <div class="container container-image mx-auto">
+                    <div class="container profile-image">
+                        <img src="{% static 'img/JR.jpg' %}" alt="Prof pic">
+                    </div>
+                    <div class="profile-image-background">
+                    </div>
+                </div>   
+              </div>
+
+              <div class="col-xs-12 col-sm-6 my-2 my-sm-auto px-5">
+                <div class="text-container">
+                    <h1><span>Hello,</span> friends!</h1>
+                    <p>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aspernatur veniam repudiandae nesciunt aliquam excepturi ut obcaecati iste laboriosam, ad qui quis aut recusandae saepe ab animi cupiditate inventore earum laborum!
+                    </p>
+                </div>
+              </div>
+          </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="container-fluid overflow-auto skills">
+        <div class="col-12 text-center my-5">
+            <h1 class="pt-4 title-1">Skills</h1>
+            <div class="border-top boder-black w-25 mx-auto my-3"></div>
+        </div>  
+        <div class="container">
+            <div class="row my-5 text-center">
+                <div class="col-lg-4 col-md-6 my-4 px-5">
+                    <a href="{% url 'works' %}"><i class="fas fa-chart-line"></i></a>
+                    <h2>Data Science</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, optio?</p>
+                    <a href="#" class="btn btn-outline-danger btn-lg">Learn More</a>
+                </div>
+                <div class="col-lg-4 col-md-6 my-4 px-5">
+                    <a href="#"><i class="fas fa-user-tie"></i></a>
+                    <h2>Business</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam iure nostrum neque ad nesciunt obcaecati.</p>
+                    <a href="#" class="btn btn-outline-danger btn-lg">Learn More</a>
+                </div>
+                <div class="col-lg-4 col-md-6 my-4 px-5">
+                    <a href="{% url 'works' %}"><i class="fas fa-code"></i></a>
+                    <h2>Web Dev</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam iure nostrum neque ad nesciunt obcaecati.</p>
+                    <a href="#" class="btn btn-outline-danger btn-lg">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" id="works">
+            <div class="carousel-item active">
+            <img class="d-block w-100" src="{% static 'img/skincare.jpg' %}" alt="First slide">
+            <a href="{% url 'works' %}">
+            <h3>Skincare Conflict Checker</h3>
+            <h5 class="btn btn-danger btn-lg w-25 mx-auto learn-more">See More</h5>
+            </a>
+            </div>
+            <div class="carousel-item">
+            <a href="{% url 'works' %}">
+            <img class="d-block w-100" src="{% static 'img/fitness.jpg' %}" alt="Second slide">
+            <h3>Fitness Calculator</h3>
+            <h5 class="btn btn-danger btn-lg w-25 mx-auto learn-more">See More</h5>
+            </a>    
+            </div>
+            <div class="carousel-item">
+            <a href="{% url 'works' %}">
+            <img class="d-block w-100" src="{% static 'img/skincare.jpg' %}" alt="Second slide">
+            <h3>Data Science Project</h3>
+            <h5 class="btn btn-danger btn-lg w-25 mx-auto learn-more">See More</h5>
+            </a>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>    
+</body>
+
+{% endblock %}

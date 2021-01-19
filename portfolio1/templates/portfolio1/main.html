@@ -1,0 +1,156 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'img/logo6.png' %}" />
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body{
+            font-family: 'Poppins';
+            padding: 0;
+        }
+        p{
+            font-family: 'Open Sans'
+        }
+
+        /* NAVBAR */
+        .navbar{
+            /* background: none!important;
+            display: absolute!important; */
+            height: 80px;
+            box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.2);
+            z-index: 2;
+        }
+        .navbar-brand{
+            font-weight: bold;
+            font-size: 1.5em;
+            margin-left: 5px;
+        }
+        .navbar-brand span{
+            color: orangered;
+        }
+        .nav-link.active,
+        .nav-link:hover{
+            color: orangered!important;
+        }
+        .nav-item{
+            margin: 0 5px;
+            font-size: 1.2em;
+        }
+
+        /* FOOTER */
+        .footer{
+            background: lightgray;
+            color: dimgray;
+            font-size: 0.95em;
+        }
+        .footer h5{
+            font-weight: 600;
+            color: black
+        }
+        .footer li{
+            padding-top: 3px;
+        }
+        .footer .fab{
+            font-size: 25px;
+            position: relative;
+            top: 5px;
+        }
+        #contacts span{
+            color: black;
+        }
+        .footer .socmed{
+            text-align: left;
+            padding: 0 auto;
+        }
+        .footer .socmed span{
+            padding-left:5px;
+            color: black;
+        }
+        .footer .socmed a:hover{
+            text-decoration: none;
+        }
+        .form-control{
+            background: whitesmoke;
+            font-size: 14px;
+            font-family: "Open Sans"
+        }
+    </style>
+
+    <title>John Ray Ignacio</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg sticky-top navbar-light bg-light">
+        <a class="navbar-brand" href="#">Port<span>folio</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link active" href={% url 'home' %}>Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="{% url 'works' %}">Works</a>
+            <a class="nav-item nav-link" href="{% url 'experience' %}">Experience</a>
+            <a class="nav-item nav-link" href="#contacts">Contact</a>
+          </div>
+        </div>
+    </nav>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <!-- FOOTER -->
+    <div class="container-fluid px-5 footer">
+        <div class="row py-3">
+            <div class="col-md-4 py-3">
+                <h5>Contacts</h5>
+                <ul class="list-unstyled" id="contacts">
+                    <li><span>Email:</span> johnrayignacio31@gmail.com</li>
+                    <li><span>Phone:</span> +63 908 865 1231</li>
+                    <li><span>Tel:</span> (02)8584-7461</li>
+                </ul>
+            </div>
+            <div class="col-md-4 socmed py-3" id="contacts">
+                <h5>Social Media</h5>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.facebook.com/johnray.ignacio.9/" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                        <i class="fab fa-facebook-square" style="color: #3b5998"></i><span>johnray.ignacio.9</span></a>
+                    </li>
+
+                    <li><a href="https://twitter.com/GopiGaber" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                        <i class="fab fa-twitter-square" style="color: #08a0e9"></i><span>gopigaber</span></a>
+                    </li>
+
+                    <li><a href="https://github.com/johnrayignacio" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
+                        <i class="fab fa-github-square" style="color: black"></i><span>johnrayignacio</span></a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="col-md-4 form-group py-3">
+                <h5>Leave a message</h5>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="4" placeholder="Aa"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
