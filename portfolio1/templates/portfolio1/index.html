@@ -3,6 +3,13 @@
 
 {% block content %}
 <head>
+    <script>
+        $(document).ready(function(){
+            $(".active").removeClass("active");
+            $("#nav-home").addClass("active");
+        });
+    </script>
+
     <style>        
         /* CAROUSEL */
         .carousel-item h3, .carousel-item h5{
