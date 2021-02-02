@@ -3,24 +3,213 @@
 
 {% block content %}
 <head>
+    <script>
+        $(document).ready(function(){
+            $(".active").removeClass("active");
+            $("#nav-experience").addClass("active");
+        });
+    </script>
     <style>
         body{
             background: #fddfc7;
         }
-        .footer{
+        /* .footer{
             position: fixed;
             bottom: 0;
-        }
+        } */
         h1{
             letter-spacing: 2px;
             color: dimgray;
             font-weight: 800;
         }
+
+        /* CONTENT */
+        .container{
+            min-height: 80%;
+        }
+
+        /* TITLE */
+        .title h2{
+            letter-spacing: 2px;
+            color: dimgray;
+            font-weight: 800;
+        }
+        .title hr{
+            border-width: 4px;
+            margin-top: 0;
+        }
+        .btn-link{
+            text-decoration: none;
+        }
+        .btn-link:hover{
+            text-decoration: none;
+        }
+
+        /* HEADER */
+        .header h3, .header h5{
+            display: inline-block;
+        }
+        .header h3{
+            font-size: 22px;
+            font-weight: 600;
+        }
+        .header h5{
+            float: right;
+            font-size: 18px;
+            position: relative;
+            bottom: -4px;
+        }
+
+        /* POSITION */
+        .position li{
+            font-family: "Open Sans";
+        }
+
+        /* FOOTER */
     </style>
 </head>
 <body>
-    <div class="container h-50 text-center pt-5">
+    <!-- <div class="container text-center pt-5">
         <h1>Coming soon.</h1>
+    </div> -->
+    
+    <div class="container mt-5">
+        <div class="title">
+            <button class="btn btn-link p-0" data-toggle="collapse" data-target="#work-experience" aria-expanded="false" aria-controls="work-experience">
+            <h2>Work Experience</h2>
+            </button>
+            <hr>
+        </div>
+
+        <div class="title-container collapse" id="work-experience">
+            <div class="company-container mb-4">
+                <div class="container-fluid header px-0 pt-2">
+                    <h3>Procter & Gamble</h3>
+                    <h5>September 2020 to December 2020</h5>
+                </div>
+
+                <div class="position-container">
+                    <div class="container-fluid px-0 position">
+                        <h5>Finance & Accounting Intern</h5>
+                        <ul>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam non quaerat sed nobis perspiciatis labore perferendis facilis nulla, quia ea?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company-container mb-5">
+                <div class="container-fluid header px-0 pt-2">
+                    <h3>Airship Logistics Solutions</h3>
+                    <h5>July 2020 to September 2020</h5>
+                </div>
+
+                <div class="position-container">
+                    <div class="container-fluid px-0 position">
+                        <h5>Business Development Intern</h5>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cumque eum porro.</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae sit et praesentium aspernatur saepe veritatis ipsam quam ullam distinctio repellat rem at consequatur suscipit corrupti deserunt quos provident, temporibus nam?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="title">
+            <button class="btn btn-link p-0" data-toggle="collapse" data-target="#leadership" aria-expanded="false" aria-controls="leadership">
+            <h2>Leadership Experience</h2>
+            </button>
+            <hr>       
+        </div>
+        <div class="title-container collapse" id="leadership">
+            <div class="company-container mb-4">
+                <div class="container-fluid header px-0 pt-2">
+                    <h3>UP Advertising Core [Company]</h3>
+                    <h5>January 2018 to Present</h5>
+                </div>
+
+                <div class="position-container">
+                    <div class="container-fluid px-0 position">
+                        <h5>Teenspeak Project Director</h5>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem exercitationem, a saepe placeat dolore cum?</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, error.</li>
+                            <li>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam non quaerat sed nobis perspiciatis labore perferendis facilis nulla, quia ea?</li>
+                        </ul>
+                    </div>
+
+                    <div class="container-fluid px-0 position">
+                        <h5>AdVance Project Director</h5>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cumque eum porro.</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae sit et praesentium aspernatur saepe veritatis ipsam quam ullam distinctio repellat rem at consequatur suscipit corrupti deserunt quos provident, temporibus nam?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company-container mb-5">
+                <div class="container-fluid header px-0 pt-2">
+                    <h3>AIESEC in UP Diliman</h3>
+                    <h5>January 2018 to Present</h5>
+                </div>
+
+                <div class="position-container">
+                    <div class="container-fluid px-0 position">
+                        <h5>Marketing Penetration Officer</h5>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cumque eum porro.</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae sit et praesentium aspernatur saepe veritatis ipsam quam ullam distinctio repellat rem at consequatur suscipit corrupti deserunt quos provident, temporibus nam?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="title">
+            <button class="btn btn-link p-0" data-toggle="collapse" data-target="#education" aria-expanded="false" aria-controls="education">
+            <h2>Education</h2>
+            </button>
+            <hr>
+        </div>
+
+        <div class="title-container collapse" id="education">
+            <div class="company-container mb-4">
+                <div class="container-fluid header px-0 pt-2">
+                    <h3>University of the Philippines Diliman</h3>
+                    <h5>August 2017 to June 2021</h5>
+                </div>
+
+                <div class="position-container">
+                    <div class="container-fluid px-0 position">
+                        <h5>BS Business Administration & Accountancy</h5>
+                        <ul>
+                            <li>Consistent university scholar (GWA of 1.4/1 and above)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="company-container mb-5">
+                <div class="container-fluid header px-0 pt-2">
+                    <h3>Ateneo de Manila High School</h3>
+                    <h5>June 2013 to March 2017</h5>
+                </div>
+
+                <div class="position-container">
+                    <div class="container-fluid px-0 position">
+                        <h5>Accountancy, Business, and Management High School</h5>
+                        <ul>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos cumque eum porro.</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae sit et praesentium aspernatur saepe veritatis ipsam quam ullam distinctio repellat rem at consequatur suscipit corrupti deserunt quos provident, temporibus nam?</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 {% endblock %}

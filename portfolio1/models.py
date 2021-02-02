@@ -14,4 +14,10 @@ class Works(models.Model):
     def __str__(self):
         return self.title
 
+    def class_name(self):
+        if self.label == 'Data Science':
+            return 'data-science'
+        elif self.label == 'Web Development':
+            return 'webdev'
+
 # Create your models here.

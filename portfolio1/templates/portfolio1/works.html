@@ -3,6 +3,13 @@
 
 {% block content %}
 <head>
+    <script>
+        $(document).ready(function(){
+            $(".active").removeClass("active");
+            $("#nav-works").addClass("active");
+        });
+    </script>
+
     <style>
         body{
             background: #fddfc7;
@@ -118,7 +125,7 @@
             {% for work in works %}
             <div class="card-custom col-xs-12 col-md-6 col-xl-4 mb-3">
                 <a href="{{work.link}}" onclick="window.open(this.href); return false;" onkeypress="window.open(this.href); return false;">
-                    <div class="img-wrapper data-science">
+                    <div class="img-wrapper {{work.class_name}}">
                         <img class="mw-100" src="{{work.photo.url}}" alt="skincare">
                     </div>
                     <h3>{{work.title}}</h3>

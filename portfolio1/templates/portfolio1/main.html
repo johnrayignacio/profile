@@ -15,6 +15,8 @@
 
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <style>
         html{
             scroll-behavior: smooth;
@@ -102,10 +104,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav ml-auto">
-            <a class="nav-item nav-link active" href={% url 'home' %}>Home <span class="sr-only">(current)</span></a>
-            <a class="nav-item nav-link" href="{% url 'works' %}">Works</a>
-            <a class="nav-item nav-link" href="{% url 'experience' %}">Experience</a>
-            <a class="nav-item nav-link" href="#contacts">Contact</a>
+            <a class="nav-item nav-link active" id="nav-home" href={% url 'home' %}>Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" id="nav-works" href="{% url 'works' %}">Works</a>
+            <a class="nav-item nav-link" id="nav-experience" href="{% url 'experience' %}">Experience</a>
+            <a class="nav-item nav-link" id="nav-contacts" href="#contacts">Contact</a>
           </div>
         </div>
     </nav>
